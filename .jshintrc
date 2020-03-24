@@ -1,0 +1,19 @@
+{
+	"esversion": 6,
+	"strict": "global",
+	"globals": {
+		"CacheService": true,
+		"console": true,
+		"kjlib": true,
+		"LockService": true,
+		"Logger": true,
+		"OAuth2": true,
+		"PropertiesService": true,
+		"ScriptApp": true,
+		"SettingsTable": true,
+		"SpreadsheetApp": true,
+		"Session": true,
+		"HtmlService": true,
+		"UrlFetchApp": true
+	}
+}
