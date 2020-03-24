@@ -3,7 +3,7 @@
 class BungieManifest {
 
   constructor() {
-		this._manifest = JSON.parse(UrlFetchApp.fetch('https://raw.githubusercontent.com/legion0/Destiny-2-Gear-Level-Calculator/master/bungie.manifest.json').getContentText());
+		this._manifest = JSON.parse(UrlFetchApp.fetch('https://raw.githubusercontent.com/legion0/llbalancer/master/bungie.manifest.json').getContentText());
 	}
 	
 	getItemCategories(itemHash) {

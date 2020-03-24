@@ -1,0 +1,25 @@
+{
+  "name": "llbalancer",
+  "version": "1.0.0",
+  "description": "## Project Key",
+  "main": "manifest.gen.js",
+  "type": "module",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.11",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legion0/llbalancer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/legion0/llbalancer/issues"
+  },
+  "homepage": "https://github.com/legion0/llbalancer#readme"
+}

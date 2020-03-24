@@ -87,7 +87,7 @@ class GASBungieApi {
 	}
 
 	static _showLoginPrompt(ui, service) {
-		let htmlTemplate = HtmlService.createTemplate('Click <a href="<?= authorizationUrl ?>" target="_blank">here</a> to redirect to bungie to authorize this app to read your inventory.');
+		let htmlTemplate = HtmlService.createTemplate(_loginPromptHtmlTemplate);
 		htmlTemplate.authorizationUrl = service.getAuthorizationUrl();
 		let htmlOutput = htmlTemplate.evaluate();
 		ui.showModalDialog(htmlOutput, /*title=*/'Authorization Required');
@@ -110,3 +110,6 @@ let _apiKeyPromptMsg = `Enter Bungie App API Key:
 You can create one at: https://www.bungie.net/en/User/API
 Your Redirect URL is: https://script.google.com/macros/d/${ScriptApp.getScriptId()}/${_callbackFunctionName}
 Required Scope: Read your Destiny 2 information (Vault, Inventory, and Vendors), as well as Destiny 1 Vault and Inventory data.`;
+
+let _loginPromptHtmlTemplate = `Click <a href="<?= authorizationUrl ?>" target="_blank">here</a> to redirect to bungie to authorize this app to read your inventory.\n
+When done close this dialog and try again.`;
