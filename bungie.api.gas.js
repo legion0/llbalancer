@@ -71,7 +71,6 @@ class GASBungieApi {
 
 	static _createService() {
 		let propertyStore = PropertiesService.getUserProperties();
-		let cache = CacheService.getUserCache();
 
 		let oAuthClientId = propertyStore.getProperty('GASBungieApi/oAuthClientId');
 		let oAuthClientSecret = propertyStore.getProperty('GASBungieApi/oAuthClientSecret');
@@ -82,8 +81,7 @@ class GASBungieApi {
 			.setClientId(oAuthClientId)
 			.setClientSecret(oAuthClientSecret)
 			.setCallbackFunction(_callbackFunctionName)
-			.setPropertyStore(propertyStore)
-			.setCache(cache);
+			.setPropertyStore(propertyStore);
 	}
 
 	static _showLoginPrompt(ui, service) {
