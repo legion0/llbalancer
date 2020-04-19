@@ -10,7 +10,6 @@ class GASBungieApi {
 	*/
 	static create(ui) {
 		let propertyStore = PropertiesService.getUserProperties();
-		let cache = CacheService.getUserCache();
 
 		let apiKey = propertyStore.getProperty('GASBungieApi/apiKey');
 		if (!apiKey) {
@@ -39,6 +38,7 @@ class GASBungieApi {
 		propertyStore.deleteProperty('GASBungieApi/apiKey');
 		propertyStore.deleteProperty('GASBungieApi/oAuthClientId');
 		propertyStore.deleteProperty('GASBungieApi/oAuthClientSecret');
+		propertyStore.deleteProperty('oauth2.GASBungieApi');
 	}
 
 	static _apiKeyPrompt(ui, propertyStore) {
@@ -108,8 +108,11 @@ let _callbackFunctionName = 'GASBungieApi._callback';
 
 let _apiKeyPromptMsg = `Enter Bungie App API Key:
 You can create one at: https://www.bungie.net/en/User/API
-Your Redirect URL is: https://script.google.com/macros/d/${ScriptApp.getScriptId()}/${_callbackFunctionName}
-Required Scope: Read your Destiny 2 information (Vault, Inventory, and Vendors), as well as Destiny 1 Vault and Inventory data.`;
+Application Name: <Make one up>
+Application Status: Private
+OAuth Client Type: Confidential
+Redirect URL: https://script.google.com/macros/d/${ScriptApp.getScriptId()}/usercallback
+Scope: Read your Destiny 2 information (Vault, Inventory, and Vendors), as well as Destiny 1 Vault and Inventory data.`;
 
 let _loginPromptHtmlTemplate = `Click <a href="<?= authorizationUrl ?>" target="_blank">here</a> to redirect to bungie to authorize this app to read your inventory.\n
 When done close this dialog and try again.`;
