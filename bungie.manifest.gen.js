@@ -56,6 +56,7 @@ Array.prototype.toObject = function (keyFunc, valFunc) {
 fetch('https://www.bungie.net/Platform/Destiny2/Manifest')
 	.then(data => data.json())
 	.then(json => {
+		fs.writeFileSync('bungie.manifest.json.version', json.Response.version);
 		return Promise.all(specs.map(spec => fetch(spec.urlSelector(json)).then(response => response.json())));
 	}).then(function (responses) {
 		// console.log(responses);
@@ -65,5 +66,4 @@ fetch('https://www.bungie.net/Platform/Destiny2/Manifest')
 		}, {});
 		let jsonStr = JSON.stringify(manifest);
 		fs.writeFileSync('bungie.manifest.json', jsonStr);
-		// console.log(jsonStr);
 	});
