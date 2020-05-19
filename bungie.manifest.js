@@ -1,6 +1,6 @@
 'use strict';
 
-const BUNGIE_MANIFEST_VERSION = '83027.20.04.06.1048-3';
+const BUNGIE_MANIFEST_VERSION = '83341.20.04.17.1921-8';
 
 class BungieManifest {
 
