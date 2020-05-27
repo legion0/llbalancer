@@ -64,6 +64,7 @@ function doFetch(api, manifest) {
   .setValues(BungieManifest.WeaponCategories.map(weaponCategory => [weapons[weaponCategory]]));
   SpreadsheetApp.getActiveSpreadsheet().getRange("balancer!B5:D9")
   .setValues(BungieManifest.ArmorCategories.map(armorCategory => BungieManifest.ClassCategories.map(classCategory => armors[armorCategory][classCategory])));
+  SpreadsheetApp.flush();
 }
 
 function getItemInstancePrimaryStatValue(itemInstanceId, profile) {
