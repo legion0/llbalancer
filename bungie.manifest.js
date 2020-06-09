@@ -1,6 +1,6 @@
 'use strict';
 
-const BUNGIE_MANIFEST_VERSION = '000';
+const BUNGIE_MANIFEST_VERSION = '84291.20.05.27.1646-1';
 // const GIT_BRANCH = `bungie-manifest-version-${BUNGIE_MANIFEST_VERSION}`;
 const GIT_BRANCH = 'master';
 
