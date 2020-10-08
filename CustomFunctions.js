@@ -16,3 +16,22 @@ function RecursiveAverage(range) {
   }
   return average;
 }
+
+function BalanceMinItemCount(range, average, required) {
+  let values = range.flat();
+  values = values.sort().reverse();
+  let sum = 0;
+  let count = 0;
+  for (let i = 0; i < values.length; i++) {
+    let value = values[i];
+    if (value < average) {
+      sum += average - value;
+      count++;
+      if (sum >= required) {
+        break;
+      }
+    }
+  }
+  return count;
+}
+
