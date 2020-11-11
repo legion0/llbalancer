@@ -14,9 +14,14 @@ class BungieManifest {
   }
 
   getItemCategories(itemHash) {
-    let itemCategoryHashes = this._manifest.DestinyInventoryItemDefinition[
-      itemHash
-    ].itemCategoryHashes;
+    let destinyInventoryItemDefinition = this._manifest
+      .DestinyInventoryItemDefinition[itemHash];
+    if (destinyInventoryItemDefinition == undefined) {
+      throw new Error(
+        `Cannot find DestinyInventoryItemDefinition for hash ${itemHash}, try updating the manifest or contact the developer`
+      );
+    }
+    let itemCategoryHashes = destinyInventoryItemDefinition.itemCategoryHashes;
     let shortTitles =
       itemCategoryHashes !== undefined
         ? itemCategoryHashes.map(
